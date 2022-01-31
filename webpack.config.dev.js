@@ -9,11 +9,12 @@ module.exports = {
     static: './dist',
     historyApiFallback: true
   },
-  entry: './src/app.js',
+  entry: './src/core/index.js',
   output: {
     filename: '[name].[contenthash:8].js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: './src/app.js',
+  entry: './src/core/index.js',
   output: {
     filename: 'js/[name].[contenthash:8].js',
     path: path.resolve(__dirname, 'dist'),

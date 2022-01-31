@@ -1,0 +1,7 @@
+export default {
+  PRIMARY_COLOR: '#232323',
+  SECONDARY_COLOR: '#E3D9D1',
+  ACCENT_COLOR: '#D8261E',
+
+  HEADER_HEIGHT: 60
+}
