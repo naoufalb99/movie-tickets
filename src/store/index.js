@@ -1,12 +1,11 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
+import moviesReducer from './movies'
 import rootSaga from './rootSaga'
 
 const reducers = combineReducers({
-  all (s = [], _) {
-    return s
-  }
+  movies: moviesReducer
 })
 
 const configureStore = (initialState = {}) => {
