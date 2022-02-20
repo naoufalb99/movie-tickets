@@ -46,5 +46,22 @@ export default ({
   date: {
     marginTop: '16px',
     color: 'rgba(255, 255, 255, .8)'
+  },
+  schedules: {
+    marginTop: 40
+  },
+  nextBar: {
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+    left: 0,
+    height: 80,
+    backgroundColor: 'rgba(255, 255, 255, .7)',
+    display: 'flex',
+    alignItems: 'center'
+  },
+  nextBarContainer: {
+    display: 'flex',
+    justifyContent: 'right'
   }
 })
