@@ -35,7 +35,7 @@ export default function MovieSchedule ({ data }) {
   } = formatMovieDate(data.dayTimestamp)
 
   const handleScheduleSelected = (time) => {
-    dispatch(addMovieAction(movieId, data.dayTimestamp, time))
+    dispatch(addMovieAction(movieId, data.dayTimestamp, time, data.price))
   }
 
   return (

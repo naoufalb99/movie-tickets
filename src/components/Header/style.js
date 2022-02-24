@@ -15,6 +15,7 @@ export default ({
     fontWeight: 700,
     position: 'relative',
     '& span': {
+      cursor: 'pointer',
       position: 'relative',
       zIndex: 2
     },

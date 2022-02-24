@@ -8,13 +8,14 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_MOVIE: {
-      const { id, dayTimestamp, time } = action.payload
+      const { id, dayTimestamp, time, price } = action.payload
       return {
         ...state,
         movies: {
           ...state.movies,
           [id]: { dayTimestamp, time }
-        }
+        },
+        price: state.price + price
       }
     }
     default:
@@ -22,7 +23,7 @@ export default (state = initialState, action) => {
   }
 }
 
-export const addMovieAction = (id, dayTimestamp, time) => ({ type: ADD_MOVIE, payload: { id, dayTimestamp, time } })
+export const addMovieAction = (id, dayTimestamp, time, price) => ({ type: ADD_MOVIE, payload: { id, dayTimestamp, time, price } })
 
 export const selectCart = (state) => state.cart
 export const selectCartMovieById = (id) => (state) => selectCart(state).movies[id]

@@ -4,19 +4,28 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 const createActionName = (name) => `movie/${name}`
 
 const initialState = {
+  isLoading: false,
   data: null,
   error: null
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case FETCH_MOVIE_START:
+      return {
+        isLoading: true,
+        data: action.data,
+        error: null
+      }
     case FETCH_MOVIE_SUCCESS:
       return {
+        isLoading: false,
         data: action.data,
         error: null
       }
     case FETCH_MOVIE_FAIL:
       return {
+        isLoading: false,
         error: action.error
       }
     default:

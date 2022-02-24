@@ -4,11 +4,11 @@ import style from './style'
 
 const useStyles = createUseStyles(style)
 
-export default function Button ({ children, backgroundColor, textColor }) {
+export default function Button ({ children, backgroundColor, textColor, ...props }) {
   const { button } = useStyles({ backgroundColor, textColor })
 
   return (
-    <button className={button}>
+    <button className={button} {...props}>
       {children}
     </button>
   )

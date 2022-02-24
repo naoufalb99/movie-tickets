@@ -15,7 +15,7 @@ export default function MoviesList () {
   return (
     <div className={classes.container}>
       {
-       data.slice(0, 5).map((item) => <MovieSingle key={item.id} data={item} />)
+       data.slice(1, 6).map((item) => <MovieSingle key={item.id} data={item} />)
       }
     </div>
   )

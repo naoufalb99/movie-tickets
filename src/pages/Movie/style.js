@@ -13,7 +13,7 @@ export default ({
       left: 0,
       right: 0,
       bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, .8)',
+      backgroundColor: 'rgba(0, 0, 0, .6)',
       boxShadow: 'inset  0 -300px 260px -80px #000'
     }
   },
@@ -56,12 +56,17 @@ export default ({
     bottom: 0,
     left: 0,
     height: 80,
-    backgroundColor: 'rgba(255, 255, 255, .7)',
+    backgroundColor: 'rgba(255, 255, 255, .2)',
     display: 'flex',
     alignItems: 'center'
   },
   nextBarContainer: {
     display: 'flex',
     justifyContent: 'right'
+  },
+  price: {
+    paddingLeft: 16,
+    marginLeft: 16,
+    borderLeft: '1px solid rgba(255, 255, 255, .4)'
   }
 })
