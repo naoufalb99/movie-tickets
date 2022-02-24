@@ -5,13 +5,13 @@ import style from './style'
 
 const useStyles = createUseStyles(style)
 
-export default function Cart () {
+export default function Checkout () {
   const classes = useStyles()
 
   return (
     <DefaultLayout>
       <Container className={classes.container}>
-        <h2 className={classes.title}>Cart Page</h2>
+        <h2 className={classes.title}>Checkout Page</h2>
       </Container>
     </DefaultLayout>
   )

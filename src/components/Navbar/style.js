@@ -1,7 +1,10 @@
+import ui from 'constants/ui'
+
 export default ({
   navbar: {
 
   },
+  activeLink: {},
   list: {
     '& li': {
       display: 'inline-block',
@@ -12,8 +15,12 @@ export default ({
         marginLeft: 0
       }
     },
+    '& $activeLink': {
+      color: ui.ACCENT_COLOR
+    },
     '& a': {
       color: '#111'
     }
   }
+
 })

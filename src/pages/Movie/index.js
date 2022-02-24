@@ -1,7 +1,7 @@
 import Button from 'components/Button'
 import Container from 'components/Container'
 import DefaultLayout from 'components/DefaultLayout'
-import { CartPath } from 'core/Router'
+import { CheckoutPath } from 'core/Router'
 import { useLayoutEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 import { useDispatch, useSelector } from 'react-redux'
@@ -54,7 +54,7 @@ export default function Movie () {
         {cartMovie !== undefined && (
           <div className={classes.nextBar}>
             <Container className={classes.nextBarContainer}>
-              <Button backgroundColor='red' textColor='white' onClick={() => navigate(CartPath)}>Buy Ticket
+              <Button backgroundColor='red' textColor='white' onClick={() => navigate(CheckoutPath)}>Buy Ticket
                 <span className={classes.price}>{movie.price} Dhs</span>
               </Button>
             </Container>
