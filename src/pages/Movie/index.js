@@ -27,6 +27,8 @@ export default function Movie () {
     dispatch(fetchMovieAction(movieId))
   }, [movieId])
 
+  const nextBarEnabled = cartMovie !== undefined
+
   if (!movie || isLoading) return null
 
   return (
@@ -48,10 +50,10 @@ export default function Movie () {
             {movie.dateStart} - {movie.dateEnd}
           </div>
           <div className={classes.schedules}>
-            {movie.schedules.map((item) => (<MovieSchedule key={item.dayTimestamp} data={item} />))}
+            {movie.schedules.map((item) => (<MovieSchedule key={item.dayTimestamp} data={item} price={movie.price} />))}
           </div>
         </Container>
-        {cartMovie !== undefined && (
+        {nextBarEnabled && (
           <div className={classes.nextBar}>
             <Container className={classes.nextBarContainer}>
               <Button backgroundColor='red' textColor='white' onClick={() => navigate(CheckoutPath)}>Buy Ticket

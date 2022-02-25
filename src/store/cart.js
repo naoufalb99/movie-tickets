@@ -1,8 +1,18 @@
 const createActionName = (name) => `cart/${name}`
 
+// const initialState = {
+//   movies: {},
+//   price: 0
+// }
+
 const initialState = {
-  movies: {},
-  price: 0
+  movies: {
+    '3f531ce1-7923-4e90-b1e1-108167ba9f09': {
+      dayTimestamp: 1644940867146,
+      time: '3:30 PM'
+    }
+  },
+  price: 80
 }
 
 export default (state = initialState, action) => {

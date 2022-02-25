@@ -20,7 +20,7 @@ function MovieScheduleButton ({ value, selected, onScheduleSelected }) {
   )
 }
 
-export default function MovieSchedule ({ data }) {
+export default function MovieSchedule ({ data, price }) {
   const classes = useStyles()
 
   const dispatch = useDispatch()
@@ -35,7 +35,7 @@ export default function MovieSchedule ({ data }) {
   } = formatMovieDate(data.dayTimestamp)
 
   const handleScheduleSelected = (time) => {
-    dispatch(addMovieAction(movieId, data.dayTimestamp, time, data.price))
+    dispatch(addMovieAction(movieId, data.dayTimestamp, time, price))
   }
 
   return (
