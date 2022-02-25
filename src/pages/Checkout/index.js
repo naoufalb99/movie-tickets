@@ -11,6 +11,7 @@ import Button from 'components/Button'
 import ui from 'constants/ui'
 import { useNavigate } from 'react-router-dom'
 import { MoviesPath } from 'core/Router'
+import CheckoutPaymentForm from './CheckoutPaymentForm'
 
 const useStyles = createUseStyles(style)
 
@@ -44,6 +45,10 @@ export default function Checkout () {
               <div className={classes.inner}>
                 <div>
                   <CheckoutClientForm />
+                  <CheckoutPaymentForm />
+                  <div className={classes.submitButton}>
+                    <Button backgroundColor={ui.ACCENT_COLOR} textColor='white' onClick={() => navigate(MoviesPath)}>Confirm And Pay</Button>
+                  </div>
                 </div>
                 <div>
                   <CartOverview />

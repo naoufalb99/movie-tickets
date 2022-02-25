@@ -31,5 +31,8 @@ export default ({
     color: ui.PRIMARY_COLOR,
     opacity: 0.7,
     marginBottom: 24
+  },
+  submitButton: {
+    marginTop: 16
   }
 })

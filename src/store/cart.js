@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
           ...state.movies,
           [id]: { dayTimestamp, time }
         },
-        price: state.price + price
+        price: state.price + (state.movies[id] === undefined ? price : 0)
       }
     }
     default:

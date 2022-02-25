@@ -2,7 +2,8 @@ export default ({
   container: {
     border: '1px solid #EEE',
     padding: 8,
-    borderRadius: 3
+    borderRadius: 3,
+    marginTop: 24
   },
   title: {
     borderBottom: '1px solid #EEE',
@@ -16,5 +17,4 @@ export default ({
     gridTemplateColumns: '1fr 1fr',
     gap: 16
   }
-
 })
