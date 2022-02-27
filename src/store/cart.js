@@ -1,3 +1,5 @@
+import { takeLatest } from 'redux-saga/effects'
+
 const createActionName = (name) => `cart/${name}`
 
 // const initialState = {
@@ -34,8 +36,21 @@ export default (state = initialState, action) => {
 }
 
 export const addMovieAction = (id, dayTimestamp, time, price) => ({ type: ADD_MOVIE, payload: { id, dayTimestamp, time, price } })
+export const createReservationAction = (payload) => ({ type: CREATE_RESERVATION_START, payload })
 
 export const selectCart = (state) => state.cart
 export const selectCartMovieById = (id) => (state) => selectCart(state).movies[id]
 
+function * createReservation ({ payload }) {
+  // TODO:
+  // console.log(payload)
+}
+
 export const ADD_MOVIE = createActionName('ADD_MOVIE')
+export const CREATE_RESERVATION_START = createActionName('CREATE_RESERVATION_START')
+export const CREATE_RESERVATION_SUCCESS = createActionName('CREATE_RESERVATION_SUCCESS')
+export const CREATE_RESERVATION_FAIL = createActionName('CREATE_RESERVATION_FAIL')
+
+export function * cartRootSaga () {
+  yield takeLatest(CREATE_RESERVATION_START, createReservation)
+}

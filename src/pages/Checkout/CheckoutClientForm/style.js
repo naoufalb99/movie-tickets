@@ -15,6 +15,19 @@ export default ({
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gap: 16
+  },
+  phoneInputWrapper: {
+    position: 'relative'
+  },
+  phonePrefix: {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    marginLeft: 8,
+    paddingRight: 8,
+    borderRight: '1px solid #AAA'
+  },
+  phoneInput: {
+    paddingLeft: 58
   }
-
 })

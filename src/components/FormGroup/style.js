@@ -6,7 +6,7 @@ export default ({
     }
   },
   label: {
-    marginBottom: 3,
+    marginBottom: 2,
     display: 'block'
   }
 })

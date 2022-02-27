@@ -8,5 +8,17 @@ export default ({
     border: '1px solid #AAA',
     borderRadius: 3,
     fontSize: '.9rem'
+  },
+  inputError: {
+    borderColor: 'red',
+    color: 'red',
+    '&::placeholder': {
+      color: 'red'
+    }
+  },
+  errorMessage: {
+    color: 'red',
+    marginTop: 4,
+    fontSize: '.9rem'
   }
 })
