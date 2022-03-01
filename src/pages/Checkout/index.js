@@ -2,7 +2,7 @@ import Container from 'components/Container'
 import DefaultLayout from 'components/DefaultLayout'
 import { createUseStyles } from 'react-jss'
 import { useDispatch, useSelector } from 'react-redux'
-import { createReservationAction, selectCart } from 'store/cart'
+import { createReservationAction, selectCart, selectCreateReservation } from 'store/cart'
 import CartOverview from './CartOverview'
 import CheckoutClientForm from './CheckoutClientForm'
 import style from './style'
@@ -10,9 +10,10 @@ import emptyCart from 'assets/images/empty-cart.png'
 import Button from 'components/Button'
 import ui from 'constants/ui'
 import { useNavigate } from 'react-router-dom'
-import { MoviesPath } from 'core/Router'
+import { MoviesPath, ThankYouPath } from 'core/Router'
 import { Formik, Form } from 'formik'
 import formValidationSchema from './validation'
+import { useEffect } from 'react'
 
 // import CheckoutPaymentForm from './CheckoutPaymentForm'
 
@@ -29,14 +30,20 @@ export default function Checkout () {
   const classes = useStyles()
 
   const disptach = useDispatch()
+  const navigate = useNavigate()
 
   const cart = useSelector(selectCart)
+  const { data: reservation, isLoading } = useSelector(selectCreateReservation)
 
   const handleSubmit = (values) => {
     disptach(createReservationAction(values))
   }
 
   const cartIsEmpty = Object.keys(cart?.movies).length === 0
+
+  useEffect(() => {
+    if (reservation !== null) { navigate(ThankYouPath) }
+  }, [reservation])
 
   return (
     <DefaultLayout>
@@ -58,7 +65,9 @@ export default function Checkout () {
                       <CheckoutClientForm />
                       {/* <CheckoutPaymentForm /> */}
                       <div className={classes.submitButton}>
-                        <Button type='submit' backgroundColor={ui.ACCENT_COLOR} textColor='white'>Reserve now</Button>
+                        <Button type='submit' backgroundColor={ui.ACCENT_COLOR} textColor='white'>
+                          {isLoading ? 'Loading...' : 'Reserve now'}
+                        </Button>
                       </div>
                     </Form>
                   </Formik>
